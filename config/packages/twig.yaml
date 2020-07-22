@@ -1,2 +1,4 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        conference_js_lib_url: '%env(CONFERENCE_JS_LIB_URL)%'

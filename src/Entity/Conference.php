@@ -21,6 +21,12 @@ class Conference
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $name;
+
+    /**
      * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank()
      */
@@ -36,6 +42,18 @@ class Conference
     public function getId(): ?string
     {
         return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     public function getShortName(): ?string

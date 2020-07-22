@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ conference.name }}{% endblock %}
+
+{% block body %}
+	<div id="app"></div>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ conference_js_lib_url }}"></script>
+	<script>
+   Conference.render({
+     element: document.getElementById('app'),
+     url: {{ conference.dataUrl|json_encode|raw }}
+   })
+	</script>
+{% endblock %}

@@ -3,15 +3,19 @@
 {% block title %}{{ conference.name }}{% endblock %}
 
 {% block body %}
-	<div id="app"></div>
+  <div id="app"></div>
+{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ conference_css_lib_url }}"/>
 {% endblock %}
 
 {% block javascripts %}
-	<script src="{{ conference_js_lib_url }}"></script>
-	<script>
-   Conference.render({
+  <script src="{{ conference_js_lib_url }}"></script>
+  <script>
+   ConferenceApp.render({
      element: document.getElementById('app'),
      url: {{ conference.dataUrl|json_encode|raw }}
    })
-	</script>
+  </script>
 {% endblock %}

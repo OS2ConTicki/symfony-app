@@ -17,7 +17,10 @@
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.20"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "friendsoftwig/twigcs": "^3.2",
+        "symfony/maker-bundle": "^1.20",
+        "vimeo/psalm": "^3.12"
     },
     "config": {
         "optimize-autoloader": true,
@@ -55,6 +58,22 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "coding-standards-check/php-cs-fixer": [
+            "php-cs-fixer --config=.php_cs.dist fix --dry-run"
+        ],
+        "coding-standards-check/twigcs": [
+            "twigcs templates"
+        ],
+        "coding-standards-check": [
+            "@coding-standards-check/php-cs-fixer",
+            "@coding-standards-check/twigcs"
+        ],
+        "coding-standards-apply/php-cs-fixer": [
+            "php-cs-fixer --config=.php_cs.dist fix"
+        ],
+        "coding-standards-apply": [
+            "@coding-standards-apply/php-cs-fixer"
         ]
     },
     "conflict": {

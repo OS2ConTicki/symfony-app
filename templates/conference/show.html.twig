@@ -15,7 +15,8 @@
   <script>
    ConferenceApp.render({
      element: document.getElementById('app'),
-     url: {{ conference.dataUrl|json_encode|raw }}
+     url: {{ conference.dataUrl|json_encode|raw }},
+     basename: {{ basename |json_encode|raw }}
    })
   </script>
 {% endblock %}

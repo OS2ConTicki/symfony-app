@@ -16,5 +16,6 @@ symfony local:server:start
 
 ```sh
 # .env.local
-CONFERENCE_JS_LIB_URL='https://raw.githack.com/rimi-itk/react-app/main/dist/demo.js'
+CONFERENCE_CSS_LIB_URL='https://raw.githack.com/OS2ConTicki/display-react/feature/example-data/dist/entry.css'
+CONFERENCE_JS_LIB_URL='https://raw.githack.com/OS2ConTicki/display-react/feature/example-data/dist/entry.js'
 ```

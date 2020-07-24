@@ -24,12 +24,13 @@ class ConferenceController extends AbstractController
     }
 
     /**
-     * @Route("/{shortName}", name="conference_show", methods={"GET"})
+     * @Route("/{shortName}/{path}", name="conference_show", methods={"GET"}, requirements={"path"=".*"})
      */
-    public function show(Conference $conference): Response
+    public function show(Conference $conference, string $path = null): Response
     {
         return $this->render('conference/show.html.twig', [
             'conference' => $conference,
+            'basename' => $this->generateUrl('conference_show', ['shortName' => $conference->getShortName()]),
         ]);
     }
 }
